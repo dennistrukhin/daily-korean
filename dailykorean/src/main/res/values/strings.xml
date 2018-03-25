@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Daily Korean</string>
+    <string name="btn_next_word">Next word</string>
+    <string name="btn_play_description">Speak this word</string>
+</resources>

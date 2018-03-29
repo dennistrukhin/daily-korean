@@ -1,7 +1,7 @@
-package com.whitekittyapps.dailykorean;
+package com.whitekittyapps.dailykorean.entities;
 
 
-class Word {
+public class Word {
 
     private int id;
     private String level;
@@ -22,31 +22,31 @@ class Word {
         return level;
     }
 
-    void setLevel(String level) {
+    public void setLevel(String level) {
         this.level = level;
     }
 
-    String getWord() {
+    public String getWord() {
         return word;
     }
 
-    void setWord(String word) {
+    public void setWord(String word) {
         this.word = word;
     }
 
-    String getDefinitions() {
+    public String getDefinitions() {
         return definitions;
     }
 
-    void setDefinitions(String definitions) {
+    public void setDefinitions(String definitions) {
         this.definitions = definitions;
     }
 
-    String getPronunciation() {
+    public String getPronunciation() {
         return pronunciation;
     }
 
-    void setPronunciation(String pronunciation) {
+    public void setPronunciation(String pronunciation) {
         this.pronunciation = pronunciation;
     }
 

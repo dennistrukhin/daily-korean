@@ -4,7 +4,6 @@ import android.media.MediaPlayer;
 import android.util.Log;
 import android.view.View;
 
-import com.whitekittyapps.dailykorean.MainActivity;
 import com.whitekittyapps.dailykorean.R;
 import com.whitekittyapps.dailykorean.services.WordService;
 

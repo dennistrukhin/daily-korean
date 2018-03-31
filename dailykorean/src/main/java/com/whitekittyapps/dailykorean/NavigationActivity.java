@@ -18,14 +18,10 @@ public class NavigationActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TrainFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new WordOfDay()).commit();
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(new ItemSelectedListener(getSupportFragmentManager()));
-//
-//        Fragment fragment = new WordOfDay();
-//        FragmentTransaction ft = getFragmentManager().beginTransaction();
-//        ft.replace(R.id.fragment_container, fragment, "tag").commit();
     }
 
     @Override

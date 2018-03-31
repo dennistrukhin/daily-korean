@@ -75,7 +75,7 @@
         <LinearLayout
             android:layout_column="0"
             android:layout_row="1"
-            android:layout_rowWeight="7"
+            android:layout_rowWeight="6.5"
             android:layout_columnWeight="1"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -96,9 +96,9 @@
         <GridLayout
             android:layout_column="0"
             android:layout_row="2"
-            android:layout_rowWeight="1"
+            android:layout_rowWeight="1.5"
             android:layout_columnWeight="1"
-            android:columnCount="3"
+            android:columnCount="4"
             android:rowCount="1"
             android:layout_width="match_parent">
 
@@ -108,19 +108,33 @@
                 android:layout_row="0"/>
 
             <Button
-                android:id="@+id/btnNext"
+                android:id="@+id/btnUnknownWord"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_column="1"
-                android:layout_columnWeight="1"
+                android:layout_columnWeight="4"
                 android:layout_row="0"
                 android:layout_rowWeight="1"
                 android:gravity="center"
-                android:text="@string/btn_next_word"/>
+                android:text="@string/btn_word_unknown"
+                android:drawableStart="@drawable/ic_word_unknown"/>
 
+
+            <Button
+                android:id="@+id/btnKnownWord"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_column="2"
+                android:layout_columnWeight="4"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:backgroundTint="@color/colorAccent"
+                android:drawableStart="@drawable/ic_word_known"
+                android:gravity="center"
+                android:text="@string/btn_word_known" />
             <Space
                 android:layout_columnWeight="1"
-                android:layout_column="2"
+                android:layout_column="3"
                 android:layout_row="0"/>
 
         </GridLayout>

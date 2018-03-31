@@ -30,10 +30,10 @@ public class TrainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        WordService wordService = new WordService(this.getResources().getXml(R.xml.words));
+        WordService wordService = WordService.get();
 
         View v = inflater.inflate(R.layout.fragment_train, container, false);
-        Button btnNext = (Button) v.findViewById(R.id.btnNext);
+        Button btnNext = (Button) v.findViewById(R.id.btnKnownWord);
         ImageButton btnPlaySound = (ImageButton) v.findViewById(R.id.btnPlaySound);
 
         btnNext.setOnClickListener(new BtnNextListener(v, wordService));

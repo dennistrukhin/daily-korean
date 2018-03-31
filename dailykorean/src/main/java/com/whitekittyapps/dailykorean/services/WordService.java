@@ -3,6 +3,8 @@ package com.whitekittyapps.dailykorean.services;
 import android.content.res.XmlResourceParser;
 import android.text.TextUtils;
 
+import com.whitekittyapps.dailykorean.DailyKoreanApp;
+import com.whitekittyapps.dailykorean.R;
 import com.whitekittyapps.dailykorean.entities.Word;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -15,11 +17,22 @@ import java.util.Random;
 
 public class WordService {
 
+    private static WordService INSTANCE = null;
+
     private List<Word> words;
     private XmlResourceParser xmlParser;
     private int currentWordId;
 
-    public WordService(XmlResourceParser xmlResourceParser)
+    public static WordService get()
+    {
+        if (INSTANCE == null) {
+            XmlResourceParser xmlResourceParser = DailyKoreanApp.get().getResources().getXml(R.xml.words);
+            INSTANCE = new WordService(xmlResourceParser);
+        }
+        return INSTANCE;
+    }
+
+    private WordService(XmlResourceParser xmlResourceParser)
     {
         xmlParser = xmlResourceParser;
         words = new ArrayList<>();
@@ -30,6 +43,13 @@ public class WordService {
     {
         Random random = new Random();
         Word word = words.get(random.nextInt(words.size()));
+        currentWordId = word.getId();
+        return word;
+    }
+
+    public Word getByIndex(int index)
+    {
+        Word word = words.get(index);
         currentWordId = word.getId();
         return word;
     }

@@ -30,14 +30,13 @@ public class WordOfDay extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_word_of_day, container, false);
-        WordService wordService = WordService.get();
-        Word word = wordService.getByIndex(0);
-        (new WordPresenter(v, word)).display();
+
         User user = DailyKoreanApp.get().getUser();
-        Toast.makeText(
-                getContext(),
-                Long.toString(user.getDtStart().getTime()) + " " + Long.toString(user.getDtLastVisit().getTime()),
-                Toast.LENGTH_LONG).show();
+
+        WordService wordService = WordService.get();
+        Word word = wordService.getByIndex(user.getWordsShown());
+        (new WordPresenter(v, word)).display();
+
         return v;
     }
 

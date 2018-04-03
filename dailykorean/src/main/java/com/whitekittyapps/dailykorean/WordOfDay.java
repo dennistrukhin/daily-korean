@@ -7,7 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.whitekittyapps.dailykorean.entities.User;
 import com.whitekittyapps.dailykorean.entities.Word;
 import com.whitekittyapps.dailykorean.presenter.WordPresenter;
 import com.whitekittyapps.dailykorean.services.WordService;
@@ -31,6 +33,11 @@ public class WordOfDay extends Fragment {
         WordService wordService = WordService.get();
         Word word = wordService.getByIndex(0);
         (new WordPresenter(v, word)).display();
+        User user = DailyKoreanApp.get().getUser();
+        Toast.makeText(
+                getContext(),
+                Long.toString(user.getDtStart().getTime()) + " " + Long.toString(user.getDtLastVisit().getTime()),
+                Toast.LENGTH_LONG).show();
         return v;
     }
 
@@ -49,7 +56,7 @@ public class WordOfDay extends Fragment {
     }
 
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
+        // TODO: Update argumen t type and name
         void onFragmentInteraction(Uri uri);
     }
 }
